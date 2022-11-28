@@ -1,22 +1,44 @@
 :root {
   --grid-cols: 1;
   --grid-rows: 1;
+  --drawing-color: black;
 }
 
 #container {
-  border: 1px solid red;
   display: grid;
-  grid-gap: 0.5em;
+  justify-content: center;
   grid-template-columns: repeat(var(--grid-cols), 1fr);
   grid-template-rows: repeat(var(--grid-rows), 1fr);
+  margin-inline: 60px;
 }
 
 .grid-item {
-  padding: 1em;
   border: 1px solid #ddd;
   text-align: center;
+
+  /* this will make squares out of divs 
+  however, padding-top: 100% doesnt allow text easily
+  1) need to create <div> inside .grid-item with name .container
+  2) give position: relative to .grid-item
+  3) give position: aboslute to .container
+  4) set top and left value to 0 in .container*/
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
 }
 
-.grid-item:hover {
-  background-color: yellow;
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+}
+
+input {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.color-container {
+  display: flex;
+  justify-content: center;
 }
