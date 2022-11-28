@@ -10,16 +10,17 @@ h1 {
 
 p {
   text-align: center;
-  width: 60%;
+  width: 500px;
   margin: auto;
 }
 
 #container {
+  width: 50%;
+  margin: auto;
   display: grid;
-  justify-content: center;
+
   grid-template-columns: repeat(var(--grid-cols), 1fr);
   grid-template-rows: repeat(var(--grid-rows), 1fr);
-  margin-inline: 60px;
 }
 
 .grid-item {

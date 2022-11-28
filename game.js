@@ -33,25 +33,28 @@ submitBtn.addEventListener("click", pressedSubmit);
 
 //drawing with hover
 function drawing() {
-  //checks if mouse hovered over event
+  //checks if mouse hovered over div is the div in addEventListener
   const isHover = (e) => e.parentElement.querySelector(":hover") === e;
 
+  //selects all cells into nodelist
   const cells = document.querySelectorAll(".grid-item"); //selects all cells
+
+  //addEventListener to all cells
   cells.forEach((cell) => {
-    cell.style.color = "red";
     cell.addEventListener("mousemove", function checkHover() {
       const hovered = isHover(cell);
       if (hovered !== checkHover.hovered) {
-        console.log(hovered ? "hovered" : "not hovered");
+        //don't really understand this part why is the variable .hovered called on the function checkHover
+        //console.log(hovered ? "hovered" : "not hovered");
         checkHover.hovered = hovered;
         cell.style.background = `${colorInput.value}`;
-        console.log(colorInput.value);
+        //console.log(colorInput.value);
       }
     });
   });
 }
 
-//delete grid-items
+//delete grid-items to clear grid
 function deleteGrid() {
   const grid = document.querySelectorAll(".grid-item");
   grid.forEach((grid) => container.removeChild(grid));
