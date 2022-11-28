@@ -4,6 +4,16 @@
   --drawing-color: black;
 }
 
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
 #container {
   display: grid;
   justify-content: center;
